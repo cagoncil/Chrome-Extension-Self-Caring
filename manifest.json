@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Self-caring",
+  "version": "1.0",
+  "description": "Give your eyes a break and protect yourself from computer vision syndrome",
+  "content_scripts": [
+    {   
+      "js": ["./main.js"],
+      "css": [
+        "./styles.css"
+      ],
+      "matches": [
+          "<all_urls>"
+      ]
+    }
+  ]
+}
