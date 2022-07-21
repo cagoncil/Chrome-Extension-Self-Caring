@@ -1,10 +1,11 @@
 const contents = document.getElementsByTagName('body');
 
 
+//declare random msg
+const randomMsg = ["Touch some GRASS", "Close your eyes", "Pet your pet", "Give a hug"]
 
-const randomMsg=["Touch some GRASS", "Close your eyes", "Pet your pet", "Give a hug"]
+//populate random msg as header inside body
+contents.innerHTML =  `<h1>${randomMsg[Math.round(Math.random()*randomMsg.length)]}</h1>`;
 
-
-contents.innerHTML =  "<h1>"randomMsg[Math.round(Math.random()*messages.length)]"</h1>"
-
-console.log(randomMsg[Math.round(Math.random()*messages.length)])
+//testing randomMsg
+console.log(randomMsg[Math.round(Math.random()*randomMsg.length-1)]);

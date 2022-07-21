@@ -6,10 +6,7 @@
 
     "content_scripts": [
         {   "js": ["./main.js"],
-            "matches": ["http://*/*", "https://*/*"],
-            
-
-
-
+            "css": ["main.css"],
+            "matches": "<all_urls>"
     }]
   }
