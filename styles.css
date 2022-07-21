@@ -59,13 +59,14 @@
     position: relative;
     display: inline-block;
   }
-  .close:before {
-    content: '✕';
-  }
+  /* .close:before {
+    content: '✖';
+  } */
   .close {
-      position: absolute;
+      position: relative;
       top: 1%;
       right: 1%;
+      font-size: 2em;
       cursor: pointer;
       overflow-y: hidden;
   }
