@@ -21,12 +21,6 @@ content.appendChild(header);
 
 const backupImgURL = 'https://images.unsplash.com/photo-1658279967815-388645755042?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1015&q=80';
 
-const sheet = (function() {
-    const style = document.createElement('style');
-    style.appendChild(document.createTextNode(""));
-    document.head.appendChild(style);
-    return style.sheet;
-})();
     // sheet.insertRule("#modal-content::before { background-image: url('" + backupImgURL + "'); } ", 0)
 
     const randomMsgArray = [
@@ -103,8 +97,15 @@ function selfCaring(){
       console.log('fetching data...');
       console.log(data);
       const imageURL = data.urls.full;
+      console.log('image url', imageURL);
 
-      console.log(imageURL);
+      const sheet = (function() {
+        const style = document.createElement('style');
+        style.appendChild(document.createTextNode(""));
+        document.head.appendChild(style);
+        return style.sheet;
+      })();
+      console.log('sheet:', sheet);
       sheet.insertRule("#modal-content::before { background-image: url('" + imageURL + "'); } ", 0)
   
       const randomIndex = Math.round(Math.random()*(randomMsgArray.length - 1));
@@ -120,6 +121,8 @@ function selfCaring(){
     })
     .catch(err => {
       console.log('fetch failed, calling backup img');
+      console.log(sheet, sheet.length);
+      // sheet.deleteRule
       sheet.insertRule("#modal-content::before { background-image: url('" + backupImgURL + "'); } ", 0)
   
       const randomIndex = Math.round(Math.random()*(randomMsgArray.length - 1));
