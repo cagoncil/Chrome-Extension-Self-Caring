@@ -1,0 +1,15 @@
+{
+    "manifest_version": 2,
+    "name": "Self-caring",
+    "version": "1.0",
+    "description": "Give your eyes a break and protect yourself from computer vision syndrome",
+
+    "content_scripts": [
+        {   "js": ["./main.js"],
+            "matches": ["http://*/*", "https://*/*"],
+            
+
+
+
+    }]
+  }
